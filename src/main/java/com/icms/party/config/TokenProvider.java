@@ -16,7 +16,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Component
-public class TokenProvider {
+public class TokenProvider implements Serializable {
 
     @Value("${jwt.token.validity}")
     public long TOKEN_VALIDITY;
@@ -52,7 +52,7 @@ public class TokenProvider {
         return expiration.before(new Date());
     }
 
-	public String generateToken(Authentication authentication) {
+    public String generateToken(Authentication authentication) {
          String authorities = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(","));

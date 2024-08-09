@@ -8,10 +8,12 @@ import com.icms.party.repository.RoleRepository;
 
 @Service(value = "roleService")
 public class RoleServiceImpl {
-	    @Autowired
-	    private RoleRepository roleRepo;
+	
+	@Autowired
+	private RoleRepository roleRepo;
 
-	    public Role findByName(String name) {
-	        return roleRepo.findRoleByName(name);
-	    }
+	public Role findByName(String name) {
+		Role role = roleRepo.findRoleByName(name);
+		return role;
+	}
 }

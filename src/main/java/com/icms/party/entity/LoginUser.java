@@ -1,7 +1,8 @@
 package com.icms.party.entity;
 
 public class LoginUser {
-	private String username;
+
+    private String username;
     private String password;
 
     public String getUsername() {

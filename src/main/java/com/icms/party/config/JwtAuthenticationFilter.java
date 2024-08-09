@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	
-	    @Value("${jwt.header.string}")
+	   @Value("${jwt.header.string}")
 	    public String HEADER_STRING;
 
 	    @Value("${jwt.token.prefix}")
@@ -47,7 +47,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	                logger.error("Authentication Failed. Username or Password not valid.");
 	            }
 	        } else {
-	            logger.warn("Couldn't find bearer string, header will be ignored");
+	            logger.warn("Couldn't find Bearer string, header will be ignored");
 	        }
 	        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
@@ -62,5 +62,4 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	        }
 
 	        chain.doFilter(req, res);
-	    }
-}
+	    }}
