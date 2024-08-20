@@ -30,7 +30,7 @@ public class UserController {
     @Autowired
     private UserServiceImpl userService;
     
-    @PostMapping(value="/authenticate")
+    @PostMapping("/authenticate")
     public ResponseEntity<?> generateToken(@RequestBody LoginUser loginUser) throws AuthenticationException {
 
         final Authentication authentication = authenticationManager.authenticate(
@@ -48,7 +48,8 @@ public class UserController {
     public User saveUser(@RequestBody UserInfo user){
         return userService.save(user);
     }
-
+    
+ 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/adminping")
     public String adminPing(){

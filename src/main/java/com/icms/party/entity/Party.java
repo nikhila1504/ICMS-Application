@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +26,10 @@ public class Party {
 
 	@Column(name = "email")
 	private String emailId;
+	
+//	 @OneToOne
+//	 @JoinColumn(name = "calendar_id")
+//	 private Calendar calendar;
 
 	public Party() {
 
@@ -32,6 +38,14 @@ public class Party {
 	public int getId() {
 		return Id;
 	}
+
+//	public Calendar getCalendar() {
+//		return calendar;
+//	}
+//
+//	public void setCalendar(Calendar calendar) {
+//		this.calendar = calendar;
+//	}
 
 	public void setId(int id) {
 		Id = id;
@@ -61,9 +75,5 @@ public class Party {
 		this.partyType = partyType;
 	}
 
-	@Override
-	public String toString() {
-		return "Party [Id=" + Id + ", name=" + name + ", partyType=" + partyType + ", emailId=" + emailId + "]";
-	}
-
+	
 }

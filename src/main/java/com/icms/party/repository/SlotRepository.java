@@ -3,9 +3,9 @@ package com.icms.party.repository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.icms.party.entity.Party;
+import com.icms.party.entity.Slot;
 
 @Repository
-public interface PartyRepository extends CrudRepository<Party,Integer>{
+public interface SlotRepository extends CrudRepository<Slot,Integer>{
 
 }

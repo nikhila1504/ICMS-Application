@@ -76,6 +76,7 @@ public class PartyController {
 	
 	@GetMapping(value = "/{partyId}")
 	@ApiOperation(value = "get party by id")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public Party getpartyById(@PathVariable int partyId) {
 		return partyService.getPartyById(partyId);
 	}
